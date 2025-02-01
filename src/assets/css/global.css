@@ -1,0 +1,188 @@
+@import "../../../node_modules/tailwindcss";
+
+@plugin '../../../node_modules/tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans: TitilliumWeb, Satoshi, 'Inter', ui-sans-serif, system-ui,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+
+    /* Border radius for card, input and buttons */
+    --radius: 0.5rem;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    /* shadcn variable mappings needed for dark mode toggle */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* custom colors */
+    --color-primary-lightest: var(--color-slate-400);
+    --color-primary-lighter: var(--color-slate-500);
+    --color-primary-muted: var(--muted);
+    --color-primary-darker: var(--color-slate-800);
+    --color-primary-darkest: var(--color-slate-900);
+
+    --color-secondary-lightest: var(--color-slate-100);
+    --color-secondary-lighter: var(--color-slate-200);
+    --color-secondary-muted: var(--color-slate-300);
+    --color-secondary-darker: var(--color-slate-500);
+    --color-secondary-darkest: var(--color-slate-600);
+
+    --color-stroke: var(--color-zinc-300);
+    --color-strokedark: var(--color-zinc-700);
+
+    --color-gray-white: var(--color-zinc-300);
+    --color-gray-dark: var(--color-zinc-700);
+
+    --color-boxdark: var(--color-slate-700);
+    --color-boxdarker: var(--color-slate-800);
+    --color-boxdarkest: var(--color-slate-900);
+
+    --color-form-strokedark: var(--color-slate-600);
+    --color-form-input: var(--color-slate-800);
+
+    --color-meta-blue: var(--color-blue-600);
+    --color-meta-green: var(--color-green-700);
+    --color-meta-red: var(--color-red-700);
+    --color-meta-yellow: var(--color-yellow-500);
+    --color-meta-purple: var(--color-purple-500);
+
+    --color-information: var(--color-blue-500);
+    --color-success: var(--color-green-700);
+    --color-danger: var(--color-red-700);
+    --color-warning: var(--color-yellow-500);
+
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+*/
+
+@layer utilities {
+    html,
+    body {
+        @apply font-sans;
+
+        @media (prefers-color-scheme: dark) {
+            color-scheme: dark;
+        }
+    }
+}
+
+@layer base {
+    :root {
+        /* SHADCN LIGHT */
+
+        --background: var(--color-white);
+        --foreground: var(--color-slate-700);
+
+        --muted: var(--color-gray-100);
+        --muted-foreground: var(--color-gray-500);
+
+        --primary: var(--color-slate-700);
+        --primary-foreground: var(--color-white);
+
+        --secondary: var(--color-slate-400);
+        --secondary-foreground: var(--color-slate-200);
+
+        --card: var(--color-gray-100);
+        --card-foreground: var(--color-gray-500);
+
+        --popover: var(--color-gray-100);
+        --popover-foreground: var(--color-gray-500);
+
+        --accent: var(--color-gray-100);
+        --accent-foreground: var(--color-gray-500);
+
+        --destructive: var(--color-red-700);
+        --destructive-foreground: var(--color-yellow-500);
+
+        --border: var(--color-gray-500);
+        --input: var(--color-slate-800);
+        --ring: var(--color-slate-800);
+
+        --chart-1: var(--color-blue-600);
+        --chart-2: var(--color-red-700);
+        --chart-3: var(--color-green-700);
+        --chart-4: var(--color-yellow-500);
+        --chart-5: var(--color-purple-500);
+    }
+    .dark {
+        /* SHADCN DARK */
+
+        --background: var(--color-slate-700);
+        --foreground: var(--color-white);
+
+        --muted: var(--color-slate-800);
+        --muted-foreground: var(--color-slate-300);
+
+        --primary: var(--color-white);
+        --primary-foreground: var(--color-slate-700);
+
+        --secondary: var(--color-slate-200);
+        --secondary-foreground: var(--color-slate-400);
+
+        --card: var(--color-slate-800);
+        --card-foreground: var(--color-slate-300);
+
+        --popover: var(--color-slate-800);
+        --popover-foreground: var(--color-slate-300);
+
+        --accent: var(--color-slate-800);
+        --accent-foreground: var(--color-slate-300);
+
+        --destructive: var(--color-red-700);
+        --destructive-foreground: var(--color-yellow-500);
+
+        --border: var(--color-black);
+        --input: var(--color-slate-800);
+        --ring: var(--color-slate-800);
+
+        --chart-1: var(--color-blue-600);
+        --chart-2: var(--color-red-700);
+        --chart-3: var(--color-green-700);
+        --chart-4: var(--color-yellow-500);
+        --chart-5: var(--color-purple-500);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}

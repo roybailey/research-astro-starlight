@@ -1,0 +1,21 @@
+---
+import "../../assets/css/global.css";
+import Logo from "./logo.astro";
+import {HeaderMainMenu, HeaderRightMenu} from "./header"
+---
+
+<header class="w-full z-40 sticky top-0 left-0 bg-background shadow-primary dark:shadow-white shadow-b-2 mb-10 px-4">
+    <div class="min-h-20 flex flex-row items-center justify-between">
+
+        <div class="flex-shrink-0">
+            <Logo />
+        </div>
+        <div class="flex-1 flex items-center px-8 hidden lg:inline">
+            <HeaderMainMenu client:load />
+        </div>
+        <div class="flex-shrink-0 flex flex-row items-center justify-between gap-4 pl-4">
+            <HeaderRightMenu client:load />
+        </div>
+
+    </div>
+</header>

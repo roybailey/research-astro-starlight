@@ -1,0 +1,92 @@
+---
+import "../../assets/css/global.css";
+import Link from "./link.astro";
+const navigationItems = [
+    {
+        title: "Information",
+        href: "",
+        target: "",
+        description: "User Centric Design Software",
+        items: [
+            {
+                title: "About us",
+                href: "https://odinium.com/#ABOUT",
+                target: "_blank",
+            },
+            {
+                title: "Founder",
+                href: "https://roybailey.biz",
+                target: "_blank",
+            },
+            {
+                title: "Contact us",
+                href: "https://odinium.com#CONTACT",
+                target: "_blank",
+            },
+        ],
+    },
+];
+---
+
+
+<div class="w-full pt-10 pb-20">
+    <div class="container mx-auto px-4">
+        <div class="grid sm:grid-cols-2 gap-10 items-top justify-center">
+            <div class="flex gap-8 flex-col items-start">
+                <div class="flex gap-2 flex-col">
+                    <h2 class="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-left">
+                        Research Astro Starlight
+                    </h2>
+                    <p class="text-lg max-w-lg leading-relaxed tracking-tight text-foreground/75 text-left">
+                        Documentation Static Site Generator
+                    </p>
+                </div>
+                <div class="flex gap-20 flex-row">
+                    <div class="flex flex-col text-sm max-w-lg leading-relaxed tracking-tight text-foreground/75 text-left">
+                        <p>London</p>
+                        <p>United Kingdom</p>
+                    </div>
+                    <div class="flex flex-col text-sm max-w-lg leading-relaxed tracking-tight text-foreground/75 text-left">
+                        <a href="/terms">Terms of service</a>
+                        <a href="/privacy">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-10 items-start justify-end">
+                {navigationItems.map((item) => (
+                    <div
+                        key={item.title}
+                        class="flex text-base gap-1 flex-col items-start"
+                    >
+                        <div class="flex flex-col gap-2">
+                            {item.href ? (
+                                <Link
+                                    to={item.href}
+                                    target={item.target}
+                                    class="flex justify-between md:justify-end items-center"
+                                >
+                                    <span class="text-xl">{item.title}</span>
+                                </Link>
+                            ) : (
+                                <p class="text-xl">{item.title}</p>
+                            )}
+                            {item.items &&
+                                item.items.map((subItem) => (
+                                    <Link
+                                        key={subItem.title}
+                                        to={subItem.href}
+                                        target={subItem.target}
+                                        class="flex justify-between md:justify-end items-center"
+                                    >
+                <span class="text-foreground/75">
+                  {subItem.title}
+                </span>
+                                    </Link>
+                                ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</div>

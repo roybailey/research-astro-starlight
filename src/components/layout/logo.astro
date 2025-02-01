@@ -1,0 +1,9 @@
+---
+const { href } = Astro.props;
+---
+
+<a href={href || '/'}>
+    <div class="flex border-1 font-semibold text-2xl shadow-sm shadow-primary border-primary rounded-l-full rounded-r-full">
+        <span class="bg-foreground text-background px-4 py-2 rounded-full">RESEARCH-ASTRO-STARLIGHT</span>
+    </div>
+</a>
