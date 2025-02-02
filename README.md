@@ -1,54 +1,37 @@
-# Starlight Starter Kit: Basics
+# research-astr-starlight
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+**Motivation: setup a project to explore Astro v5 with Starlight documentation framework, adding Tailwind v4 and shadcn.**
 
-```
-npm create astro@latest -- --template starlight
-```
+## Design
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+- [Astro Docs](https://docs.astro.build)
+- [Astro Starlight Docs](https://starlight.astro.build/)
+- [Tailwind v4](https://tailwindcss.com/)
+- [ShadCN UI](https://ui.shadcn.com/)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## User Guide
 
-## 🚀 Project Structure
+Still very much experimental, trying out combinations of Tailwind, ShadCN, React and Astro.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Generally overcame many issues relatively easily where Astro Starlight provides documentation and examples.
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+Template of `docs` and `splash` might be good to add a `no-content` option that excludes the hero and title banner.
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## Developers Guide
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+- `npm install`
+- `npm run dev`
 
-Static assets, like favicons, can be placed in the `public/` directory.
+## Handover Suggestions
 
-## 🧞 Commands
+_Nuggets of Knowledge and Thinking from last people to work on the project._
+_e.g. suggestions for technical debt reduction, simplification or enhancements_
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- [ ] Failed to get PageFrame override to size override header properly
+- [ ] Failed to get Header override to size correctly
+- [x] Added customized color theme for Starlight, and Tailwind and ShadCN
+- [x] Customized some header components
+- [x] Created custom starlight page to override/enhance basic Starlight Page
+- [x] Created standalong Astro page with React components (but couldn't get light/dark to work with Starlights)
+- [x] Installed all ShadCN components (they had not added support for Tailwind v4)
+- [x] Tailwind v4 was easy but breaks ShadCN
