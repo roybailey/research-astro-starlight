@@ -14,6 +14,7 @@ import {useState} from "react";
 import ClickOutside from "@/components/layout/click-outside.tsx";
 import {Link} from "@/components/layout/link.tsx";
 import DarkModeSwitcher from "@/components/layout/dark-mode-switcher.tsx";
+import {ThemeProvider} from "@/components/layout/theme-provider.tsx";
 
 
 // ----------------------------------------------------------------------
@@ -29,50 +30,24 @@ type NavigationItem = {
 
 const navigationItems: NavigationItem[] = [
     {
-        title: "Products",
-        description: "Managing life today is already tough.  Use our tools to help create good habits.",
+        title: 'Products',
+        description: 'Lorem ipsum odor amet, consectetuer adipiscing elit.',
         items: [
             {
-                title: "Habits (demo only)",
-                href: "/",
-                target: "_blank",
+                title: 'Product 1',
+                href: '/product/1',
             },
             {
-                title: "Habits (experimental)",
-                href: "/",
-                target: "_blank",
+                title: 'Product 2',
+                href: '/product/2',
             },
             {
-                title: "Decisions (experimental)",
-                href: "/",
-                target: "_blank",
+                title: 'Product 3',
+                href: '/product/3',
             },
             {
-                title: "Budgets (experimental)",
-                href: "/",
-                target: "_blank",
-            },
-        ],
-    },
-    {
-        title: "Company",
-        subtitle: "Odinium Ltd",
-        description: "User Centric Design Software",
-        items: [
-            {
-                title: "About us",
-                href: "https://odinium.com/#ABOUT",
-                target: "_blank",
-            },
-            {
-                title: "Founder",
-                href: "https://roybailey.biz",
-                target: "_blank",
-            },
-            {
-                title: "Contact us",
-                href: "https://odinium.com#CONTACT",
-                target: "_blank",
+                title: 'Product 4',
+                href: '/product/4',
             },
         ],
     },
@@ -169,6 +144,7 @@ export const HeaderMainMenu = () => {
 
 export const HeaderRightMenu = () => (
     <>
+        <ThemeProvider>
         <div className="hidden md:inline">
             <Link href="/" target="_blank">
                 <Button className="gap-4">
@@ -179,8 +155,9 @@ export const HeaderRightMenu = () => (
         <div className="border-r border-1 border-secondary-muted min-h-10"></div>
         <DarkModeSwitcher />
         <div className="flex w-12 shrink items-end justify-end lg:hidden">
-            {/*<HeaderBurgerMenu/>*/}
+            {<HeaderBurgerMenu/>}
         </div>
+        </ThemeProvider>
     </>
 )
 

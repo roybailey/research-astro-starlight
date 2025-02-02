@@ -1,11 +1,14 @@
 ---
 import "@/assets/css/global.css";
 import Layout from "@/components/layout.astro";
+import { Hero } from '@/components/layout/hero'
+import { Feature } from '@/components/layout/feature'
+import { Pricing } from '@/components/layout/pricing'
 ---
 
 <Layout frontmatter={{ title: 'Interesting Theme' }}>
-    <h1 class="text-3xl font-bold underline text-red-600">
-        Hello world!
-    </h1>
+    <Hero client:visible />
+    <Feature client:visible />
+    <Pricing />
 </Layout>
 
