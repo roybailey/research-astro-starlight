@@ -1,4 +1,4 @@
-# research-astr-starlight
+# research-astro-starlight
 
 **Motivation: setup a project to explore Astro v5 with Starlight documentation framework, adding Tailwind v4 and shadcn.**
 
