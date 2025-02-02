@@ -1,11 +1,11 @@
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/components/ui/badge.tsx'
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from '@/components/ui/carousel'
+} from '@/components/ui/carousel.tsx'
 
 export const Feature = () => (
     <div className="w-full pb-20 lg:pb-40">

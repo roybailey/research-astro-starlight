@@ -1,13 +1,13 @@
 import { Check, MoveRight, PhoneCall } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/components/ui/badge.tsx'
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+} from '@/components/ui/card.tsx'
+import { Button } from '@/components/ui/button.tsx'
 
 export const Pricing = () => (
     <div className="w-full py-20 lg:py-40">

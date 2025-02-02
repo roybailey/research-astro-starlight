@@ -1,0 +1,26 @@
+---
+import CustomStarlightPage from "../components/CustomStarlightPage.astro";
+import { Card, CardGrid } from '@astrojs/starlight/components';
+---
+
+<CustomStarlightPage frontmatter={{ title: 'Custom Starlight Page Example' }}>
+    <p class="text-3xl font-bold italic text-red-600">
+        ...Tailwind CSS content...
+    </p>
+
+    <CardGrid stagger>
+        <Card title="Update content" icon="pencil">
+            Edit `src/content/docs/index.mdx` to see this page change.
+        </Card>
+        <Card title="Add new content" icon="add-document">
+            Add Markdown or MDX files to `src/content/docs` to create new pages.
+        </Card>
+        <Card title="Configure your site" icon="setting">
+            Edit your `sidebar` and other config in `astro.config.mjs`.
+        </Card>
+        <Card title="Read the docs" icon="open-book">
+            Learn more in [the Starlight Docs](https://starlight.astro.build/).
+        </Card>
+    </CardGrid>
+
+</CustomStarlightPage>

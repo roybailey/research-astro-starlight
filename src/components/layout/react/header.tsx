@@ -1,6 +1,6 @@
 "use client";
 
-import {Button} from "@/components/ui/button";
+import {Button} from "@/components/ui/button.tsx";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -8,13 +8,13 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui/navigation-menu.tsx";
 import {Menu, MoveRight, X} from "lucide-react";
 import {useState} from "react";
-import ClickOutside from "@/components/layout/click-outside.tsx";
-import {Link} from "@/components/layout/link.tsx";
-import DarkModeSwitcher from "@/components/layout/dark-mode-switcher.tsx";
-import {ThemeProvider} from "@/components/layout/theme-provider.tsx";
+import ClickOutside from "@/components/layout/react/click-outside.tsx";
+import {Link} from "@/components/layout/react/link.tsx";
+import DarkModeSwitcher from "@/components/layout/react/dark-mode-switcher.tsx";
+import {ThemeProvider} from "@/components/layout/react/theme-provider.tsx";
 
 
 // ----------------------------------------------------------------------
@@ -34,20 +34,16 @@ const navigationItems: NavigationItem[] = [
         description: 'Lorem ipsum odor amet, consectetuer adipiscing elit.',
         items: [
             {
-                title: 'Product 1',
-                href: '/product/1',
+                title: 'Samples',
+                href: '/samples',
             },
             {
-                title: 'Product 2',
-                href: '/product/2',
+                title: 'Guides',
+                href: '/guides/example',
             },
             {
-                title: 'Product 3',
-                href: '/product/3',
-            },
-            {
-                title: 'Product 4',
-                href: '/product/4',
+                title: 'Reference',
+                href: '/reference/example',
             },
         ],
     },
@@ -108,9 +104,9 @@ export const HeaderMainMenu = () => {
                                                         {item.description}
                                                     </p>
                                                 </div>
-                                                <a href="/" target="_blank">
+                                                <a href="/samples">
                                                     <Button size="sm" className="gap-4">
-                                                        Sign In <MoveRight className="w-4 h-4"/>
+                                                        Documentation <MoveRight className="w-4 h-4"/>
                                                     </Button>
                                                 </a>
                                             </div>
@@ -146,9 +142,9 @@ export const HeaderRightMenu = () => (
     <>
         <ThemeProvider>
         <div className="hidden md:inline">
-            <Link href="/" target="_blank">
+            <Link href="/samples">
                 <Button className="gap-4">
-                    Sign In <MoveRight className="w-4 h-4"/>
+                    Samples <MoveRight className="w-4 h-4"/>
                 </Button>
             </Link>
         </div>

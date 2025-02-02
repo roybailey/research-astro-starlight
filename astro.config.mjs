@@ -12,9 +12,18 @@ export default defineConfig({
     integrations: [
         react(),
         starlight({
-            title: 'My Docs',
+            title: 'Research Astro Starlight',
+            customCss: ['./src/assets/css/global.css'],
             social: {
                 github: 'https://github.com/withastro/starlight',
+            },
+            components: {
+                // Override the default `SocialIcons` component.
+                // Header: './src/components/layout/header.astro',
+                // PageFrame: './src/components/PageFrame.astro',
+                SocialIcons: './src/components/layout/social.astro',
+                SiteTitle: './src/components/layout/logo.astro',
+                // ThemeSelect: './src/components/layout/react/header.tsx',
             },
             sidebar: [
                 {
@@ -22,8 +31,12 @@ export default defineConfig({
                     link: '/'
                 },
                 {
-                    label: 'Tailwind Examples',
-                    link: '/tailwind'
+                    label: 'Custom Starlight Page',
+                    link: '/samples'
+                },
+                {
+                    label: 'Astro+React (not Starlight)',
+                    link: '/landing'
                 },
                 {
                     label: 'Guides',

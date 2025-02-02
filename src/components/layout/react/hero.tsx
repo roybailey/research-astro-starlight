@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { Link } from '@/components/layout/link'
+import { Button } from '@/components/ui/button.tsx'
+import { Link } from '@/components/layout/react/link.tsx'
 
 
 export const Hero = () => {
     const [titleNumber, setTitleNumber] = useState(0)
     const titles = useMemo(
-        () => ['Awesome!', 'Experimental!', 'Playful', 'FUN!'],
+        () => ['Tailwind', 'ShadCN'],
         []
     )
 
@@ -29,7 +29,7 @@ export const Hero = () => {
                     <div className="flex flex-col gap-4">
                         <h1 className="font-regular max-w-2xl text-center text-5xl tracking-tighter md:text-7xl">
                             <span className="text-spektr-cyan-50">
-                                Research Projects Are
+                                React Hero
                             </span>
                             <span className="relative flex w-full justify-center overflow-hidden text-center md:pt-1 md:pb-4">
                                 &nbsp;
@@ -76,11 +76,11 @@ export const Hero = () => {
                     </div>
                     <div className="flex flex-row gap-3">
                         <Link
-                            to="/editor"
+                            href="/samples"
                             className="flex flex-row items-center"
                         >
                             <Button variant="default" size="lg">
-                                Editor{' '}
+                                Samples{' '}
                             </Button>
                         </Link>
                     </div>

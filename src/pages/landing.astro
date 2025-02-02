@@ -1,0 +1,14 @@
+---
+import Layout from "@/components/layout.astro";
+import { Hero } from '../components/layout/react/hero'
+import { Feature } from '../components/layout/react/feature'
+import { Pricing } from '../components/layout/react/pricing'
+---
+
+<Layout frontmatter={{ title: 'Interesting Theme' }}>
+    <p class="italic">Astro page (outside Starlight) containing react components...</p>
+    <Hero client:visible />
+    <Feature client:visible />
+    <Pricing />
+</Layout>
+

@@ -1,0 +1,10 @@
+---
+import {ThemeProvider} from './react/theme-provider';
+import DarkModeSwitcher from "./react/dark-mode-switcher.js";
+---
+
+<!-- component overrides don't seem to support client side javascript (i.e. server islands) -->
+<ThemeProvider>
+<DarkModeSwitcher client:load />
+</ThemeProvider>
+

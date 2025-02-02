@@ -1,0 +1,12 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Aside } from '@astrojs/starlight/components';
+const { frontmatter } = Astro.props;
+---
+
+
+<StarlightPage frontmatter={frontmatter}>
+    <Aside>CustomStarlightPage Header</Aside>
+    <slot />
+    <Aside>CustomStarlightPage Footer</Aside>
+</StarlightPage>
