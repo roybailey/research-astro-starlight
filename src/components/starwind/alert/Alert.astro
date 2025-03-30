@@ -1,0 +1,34 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { tv } from "tailwind-variants";
+
+const alert = tv({
+	base: "text-foreground relative w-full rounded-lg border p-4",
+	variants: {
+		variant: {
+			default: "bg-background [&>h5>svg]:text-foreground",
+			primary: "border-primary bg-primary/7 [&>h5>svg]:text-primary",
+			secondary: "border-secondary bg-secondary/7 [&>h5>svg]:text-secondary",
+			info: "border-info bg-info/7 [&>h5>svg]:text-info",
+			success: "border-success bg-success/7 [&>h5>svg]:text-success",
+			warning: "border-warning bg-warning/7 [&>h5>svg]:text-warning",
+			error: "border-error bg-error/7 [&>h5>svg]:text-error",
+		},
+	},
+	defaultVariants: { variant: "default" },
+});
+
+type Props = HTMLAttributes<"div"> & {
+	/**
+	 * Sets the variant of the alert
+	 * @default "default"
+	 */
+	variant?: "default" | "primary" | "secondary" | "info" | "success" | "warning" | "error";
+};
+
+const { variant = "default", class: className, ...rest } = Astro.props;
+---
+
+<div class={alert({ variant, class: className })} {...rest}>
+	<slot />
+</div>

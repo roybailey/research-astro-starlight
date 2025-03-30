@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-    vite: {
+	vite: {
         plugins: [tailwindcss()],
     },
     integrations: [
@@ -23,7 +23,7 @@ export default defineConfig({
                 // PageFrame: './src/components/PageFrame.astro',
                 SocialIcons: './src/components/layout/social.astro',
                 SiteTitle: './src/components/layout/logo.astro',
-                // ThemeSelect: './src/components/layout/react/header.tsx',
+                ThemeSelect: './src/components/layout/ThemeSelect.astro',
             },
             sidebar: [
                 {
@@ -51,4 +51,9 @@ export default defineConfig({
                 },
             ],
         })],
+	experimental: {
+		svg: {
+			mode: "sprite",
+		},
+	},
 });

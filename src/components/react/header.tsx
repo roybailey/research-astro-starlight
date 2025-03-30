@@ -11,10 +11,10 @@ import {
 } from "@/components/ui/navigation-menu.tsx";
 import {Menu, MoveRight, X} from "lucide-react";
 import {useState} from "react";
-import ClickOutside from "@/components/layout/react/click-outside.tsx";
-import {Link} from "@/components/layout/react/link.tsx";
-import DarkModeSwitcher from "@/components/layout/react/dark-mode-switcher.tsx";
-import {ThemeProvider} from "@/components/layout/react/theme-provider.tsx";
+import ClickOutside from "@/components/react/click-outside.tsx";
+import {Link} from "@/components/react/link.tsx";
+import DarkModeSwitcher from "@/components/react/dark-mode-switcher.tsx";
+import {ThemeProvider} from "@/components/react/theme-provider.tsx";
 
 
 // ----------------------------------------------------------------------

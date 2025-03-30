@@ -1,6 +1,6 @@
 @import "../../../node_modules/tailwindcss";
-
 @plugin '../../../node_modules/tailwindcss-animate';
+@plugin "../../../node_modules/daisyui";
 
 @custom-variant dark (&:is(.dark *));
 

@@ -1,6 +1,7 @@
 ---
 import Logo from "@/components/layout/logo.astro";
-import {HeaderMainMenu, HeaderRightMenu} from "./react/header"
+import {HeaderMainMenu, HeaderRightMenu} from "../react/header"
+import ThemeSelect from "@/components/layout/ThemeSelect.astro";
 ---
 
 <header class="w-full z-40 sticky top-0 left-0 bg-background shadow-primary dark:shadow-white shadow-b-2 mb-10 px-4">
@@ -13,7 +14,7 @@ import {HeaderMainMenu, HeaderRightMenu} from "./react/header"
             <HeaderMainMenu client:load />
         </div>
         <div class="flex-shrink-0 flex flex-row items-center justify-between gap-4 pl-4">
-            <HeaderRightMenu client:load />
+            <ThemeSelect />
         </div>
 
     </div>

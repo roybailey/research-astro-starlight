@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button.tsx'
-import { Link } from '@/components/layout/react/link.tsx'
+import { Link } from '@/components/react/link.tsx'
 
 
 export const Hero = () => {

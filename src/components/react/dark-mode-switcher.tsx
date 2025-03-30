@@ -1,4 +1,4 @@
-import { useTheme } from "@/components/layout/react/theme-provider.tsx"
+import { useTheme } from "@/components/react/theme-provider.tsx"
 
 const DarkModeSwitcher = () => {
 
