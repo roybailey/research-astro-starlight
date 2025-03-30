@@ -1,11 +1,20 @@
 ---
-import '@/assets/css/global.css'
+import '../assets/css/global.css'
+const { title, description } = Astro.props;
 import Header from "@/components/layout/header.astro";
 import Footer from "@/components/layout/footer.astro";
 ---
 
-<main class="mx-auto max-w-7xl">
-    <Header />
-    <slot />
-    <Footer />
-</main>
+<html>
+<head>
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
+</head>
+<body>
+    <main class="mx-auto max-w-7xl">
+        <Header />
+        <slot />
+        <Footer />
+    </main>
+</body>
+</html>

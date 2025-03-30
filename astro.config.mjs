@@ -36,7 +36,8 @@ export default defineConfig({
                 },
                 {
                     label: 'Astro+React (not Starlight)',
-                    link: '/landing'
+                    link: '/landing',
+                    badge: { text: 'Not Working', variant: 'caution' },
                 },
                 {
                     label: 'Guides',

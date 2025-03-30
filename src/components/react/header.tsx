@@ -34,8 +34,8 @@ const navigationItems: NavigationItem[] = [
         description: 'Lorem ipsum odor amet, consectetuer adipiscing elit.',
         items: [
             {
-                title: 'Samples',
-                href: '/samples',
+                title: 'About Us',
+                href: '/landing',
             },
             {
                 title: 'Guides',

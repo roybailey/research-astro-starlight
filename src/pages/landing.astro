@@ -7,8 +7,8 @@ import { Pricing } from '../components/react/pricing'
 
 <Layout frontmatter={{ title: 'Interesting Theme' }}>
     <p class="italic">Astro page (outside Starlight) containing react components...</p>
-    <Hero client:visible />
-    <Feature client:visible />
-    <Pricing />
+    <Hero client:only="react" />
+    <Feature client:only="react" />
+    <Pricing client:only="react" />
 </Layout>
 
