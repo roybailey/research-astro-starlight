@@ -48,11 +48,24 @@ export async function getAllMdxFileNames(baseDir: string): Promise<CodeBlock[]> 
 
     walkDir(dirPath);
     console.log(JSON.stringify(mdxFiles, null, 2));
+    let snippets:CodeBlock[] = []
+    for (const file of mdxFiles) {
+        const content = fs.readFileSync(path.join(baseDir,file), 'utf-8');
+        const regex = /```(\w+)[\r\n]+([\s\S]*?)```/g;
+        let match;
+        let index = 1
+
+        while ((match = regex.exec(content)) !== null) {
+            const [_, language, code] = match;
+            snippets.push({
+                id: `snippet-${index}`,
+                type: language,
+                content: code.trim()
+            });
+            index++;
+        }
+    }
 
     // Return an array of objects with filename info
-    return mdxFiles.map((filename, index) => ({
-        id: index.toString(),
-        type: filename,
-        content: filename,
-    }));
+    return snippets;
 }
