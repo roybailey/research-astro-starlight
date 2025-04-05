@@ -1,0 +1,37 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from "@/components/layout.astro";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allDocs = await getCollection('docs');
+const allDiagrams = await getCollection('diagrams');
+---
+
+<Layout>
+
+	<div class="bg-slate-300 m-4 p-4 border-1 border-gray-200">
+		<h1>docs ({allDocs?.length})</h1>
+		<ul>
+			{allDocs.map((document) => (
+				<li class="m-4 shadow" key={document.id}>
+					<h2>({document.id}) - {document.data.title}</h2>
+					<p>{document.data.template}</p>
+				</li>
+			))}
+		</ul>
+	</div>
+
+	<div class="bg-slate-300 m-4 p-4 border-1 border-gray-200">
+		<h1>diagrams ({allDiagrams?.length})</h1>
+		<ul>
+			{allDiagrams.map((document) => (
+				<li class="m-4 shadow" key={document.id}>
+					<h2>({document.id}) - {document.data.id}</h2>
+					<p>{document.data.content}</p>
+				</li>
+			))}
+		</ul>
+	</div>
+
+</Layout>
