@@ -1,0 +1,56 @@
+---
+import '../assets/css/global.css'
+import { cn } from '@/lib/utils'
+const { title, description } = Astro.props;
+
+const cssMenuBase = "menu absolute top-16 left-0 max-lg:bg-[#FFFFFF80] w-full text-lg font-bold leading-tight"
+const cssMenuMobile = "hidden flex flex-col gap-6 items-center py-2"
+const cssMenuDesktop = "lg:flex lg:static lg:flex-row lg:justify-between"
+---
+
+<html>
+<head>
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-[url(/blog-single.png)] bg-cover bg-center h-screen">
+<main class="mx-auto">
+    <header class="bg-[#FFFFFF80] ">
+        <nav class="flex items-center justify-between px-12 h-16 lg:gap-8">
+            <a href="#" class="text-2xl font-bold px-2 py-1 whitespace-nowrap">Menu Example</a>
+
+            <div id="menu" class={cn(cssMenuBase,cssMenuMobile,cssMenuDesktop)}>
+                <ul class="flex flex-col items-center gap-6 lg:flex-row lg:gap-8">
+                    <li class="hover:text-orange-800">Home</li>
+                    <li class="hover:text-orange-800">Services</li>
+                    <li class="hover:text-orange-800">Products</li>
+                    <li class="hover:text-orange-800">About</li>
+                    <li class="hover:text-orange-800">Contact</li>
+                </ul>
+                <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-8">
+                    <button class="hover:text-orange-800">Login</button>
+                    <button class="bg-orange-800 rounded-lg px-2 py-1 text-white">Sign Up</button>
+                </div>
+            </div>
+
+            <div id="menu-toggle" class="lg:hidden">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </div>
+        </nav>
+    </header>
+</main>
+</body>
+</html>
+
+<script>
+    const menu = document.getElementById('menu');
+    const menuToggle = document.getElementById('menu-toggle');
+    const icon = document.querySelector('#menu-toggle i');
+
+    menuToggle.addEventListener("click", () => {
+        console.log(`menu toggle clicked`)
+        menu.classList.toggle('hidden');
+        icon.classList.toggle('text-blue-800');
+    })
+</script>
